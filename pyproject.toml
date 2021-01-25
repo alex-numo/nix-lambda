@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "poetry-lambda"
+version = "0.1.0"
+description = ""
+authors = ["Alexander Flurie <alex@numo.com>"]
+build = "build.py"
+include = ["poetry.lock"]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<4.0"
+arrow = "^0.17.0"
+awslambdaric = "^1.0.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.1"
+
+[build-system]
+requires = ["poetry>=1.1.0"]
+build-backend = "poetry.masonry.api"
