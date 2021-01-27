@@ -3,7 +3,6 @@ name = "poetry-lambda"
 version = "0.1.0"
 description = ""
 authors = ["Alexander Flurie <alex@numo.com>"]
-build = "build.py"
 include = ["poetry.lock"]
 
 [tool.poetry.dependencies]
