@@ -1,0 +1,19 @@
+{
+  "include": [
+    ".",
+    "poetry_lambda"
+  ],
+  
+  "exclude": [
+    "**/node_modules",
+    "**/__pycache__",
+    "**/.terragrunt_cache",
+    "**/.terraform"
+  ],
+
+  "reportMissingImports": true,
+  "reportMissingTypeStubs": false,
+
+  "pythonVersion": "3.8",
+  "pythonPlatform": "Darwin"
+}

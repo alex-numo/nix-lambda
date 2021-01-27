@@ -7,13 +7,14 @@ invocation.
 """
 
 import logging
+from typing import Dict
 import arrow
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
 
-def main(event, context):
+def main(event, context) -> Dict[str, str]:
     """
     Accepts an action and a number, performs the specified action on the number,
     and returns the result.

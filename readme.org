@@ -1,0 +1,28 @@
+#+title: Readme
+#+author: Alexander Flurie
+
+** Purpose
+This provides everything needed to package an aws lambda function and some trivial python (with some marginally less trivial packages) to show off end-to-end nix lambda packaging.
+** Prerequisites
+- [[https://nixos.org/download.html#nix-quick-install][Nix]]
+- [[https://direnv.net][direnv]] (be certain to include the [[https://direnv.net/docs/hook.html][direnv hook]] for your shell)
+- [[https://github.com/nix-community/nix-direnv][nix-direnv]]
+- docker (for running the image locally)
+** Building
+- Clone the repository
+- run the following in the repo base directory to give direnv permission:
+#+begin_src shell
+direnv allow
+#+end_src
+- to package the python library, run the following:
+#+begin_src shell
+nix-build
+#+end_src
+- to package the docker container, run the following on a compatible target platform (linux x86_64 gnu)
+#+begin_src shell
+nix-build docker.nix
+#+end_src
+The target lambda container will be at ~result~.
+** Running
+- The target lambda can be pushed to the container service of choice and run within an aws lambda.
+- To run locally, follow the instructions at [[https://docs.aws.amazon.com/lambda/latest/dg/images-test.html#images-test-limitations][aws docs]] to run the container via the  lambda runtime emulator
