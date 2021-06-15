@@ -16,24 +16,39 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1623762166,
+        "narHash": "sha256-/lwiwcgZIOue5sAi3hTNCLjWGnM/g5h2IzuViOhw4us=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "856dc82a7fe625692a59b5f7f443029678841bd7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "release-21.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "numo": {
       "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
+        "nixpkgs": "nixpkgs_2",
+        "utils": "utils"
       },
       "locked": {
-        "lastModified": 1623729049,
-        "narHash": "sha256-E0ANgt4HGX9uufACr5lqA8by4T+txrrtTJJ6wPPFrIQ=",
+        "lastModified": 1623764709,
+        "narHash": "sha256-4dPJI7P7vcEQ7ZaEJMopPxAdLgKL7Zo8Kr57g8LTRq0=",
         "ref": "lambda-build",
-        "rev": "9100f712896a9212f12561e0bd919c55b00b111a",
-        "revCount": 9,
+        "rev": "3dcc044265032b3efeae2e954579d9ea9756aa34",
+        "revCount": 11,
         "type": "git",
         "url": "ssh://git@github.com/numo-core/nix"
       },
       "original": {
         "ref": "lambda-build",
-        "rev": "9100f712896a9212f12561e0bd919c55b00b111a",
+        "rev": "3dcc044265032b3efeae2e954579d9ea9756aa34",
         "type": "git",
         "url": "ssh://git@github.com/numo-core/nix"
       }
@@ -41,7 +56,38 @@
     "root": {
       "inputs": {
         "nixpkgs": "nixpkgs",
-        "numo": "numo"
+        "numo": "numo",
+        "utils": "utils_2"
+      }
+    },
+    "utils": {
+      "locked": {
+        "lastModified": 1623660459,
+        "narHash": "sha256-OTmOsh43po7r5F9s9H6lVCBQ2b0FikWbmiwLbMAGRdw=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "98c8d36b1828009b20f12544214683c7489935a1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "utils_2": {
+      "locked": {
+        "lastModified": 1623660459,
+        "narHash": "sha256-OTmOsh43po7r5F9s9H6lVCBQ2b0FikWbmiwLbMAGRdw=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "98c8d36b1828009b20f12544214683c7489935a1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
       }
     }
   },

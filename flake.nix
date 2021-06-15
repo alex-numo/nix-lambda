@@ -5,7 +5,6 @@
     nixpkgs.url = "github:nixos/nixpkgs/release-21.05";
     utils.url = "github:numtide/flake-utils";
     numo.url = "git+ssh://git@github.com/numo-core/nix?ref=lambda-build&rev=3dcc044265032b3efeae2e954579d9ea9756aa34";
-    numo.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { self, nixpkgs, utils, numo }:
