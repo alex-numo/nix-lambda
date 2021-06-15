@@ -1,9 +1,15 @@
-{ pkgs ? import <nixpkgs> { system = "x86_64-linux"; } }:
+{ pkgs ? import <nixpkgs> {
+    system = "x86_64-linux";
+  }
+, crossPkgs ? import <nixpkgs> {
+    system = "aarch64-linux";
+  }
+}:
 
 let
   overrides = import ./overrides.nix { inherit pkgs; };
   poetry-lambda = import ./default.nix { inherit pkgs; };
-  inherit (pkgs.dockerTools) buildImage buildLayeredImage pullImage;
+  inherit (crossPkgs.dockerTools) buildLayeredImage;
 in
 buildLayeredImage {
   name = "poetryLambda";
@@ -11,8 +17,8 @@ buildLayeredImage {
   config = {
     Cmd = [ "${poetry-lambda}/bin/python" "-m" "awslambdaric" "poetry_lambda.poetry_lambda.main" ];
     Env =
-      [ "PATH=${poetry-lambda}/bin/:${pkgs.bash}/bin:${pkgs.coreutils}/bin" ];
+      [ "PATH=${poetry-lambda}/bin/" ];
     WorkingDir = "/";
   };
-  contents = [ poetry-lambda pkgs.bash pkgs.coreutils ];
+  contents = [ poetry-lambda ];
 }

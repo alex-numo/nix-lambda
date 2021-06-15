@@ -3,20 +3,21 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/release-21.05";
-    numo.url = "git+ssh://git@github.com/numo-core/nix?ref=lambda-build&rev=9100f712896a9212f12561e0bd919c55b00b111a";
+    utils.url = "github:numtide/flake-utils";
+    numo.url = "git+ssh://git@github.com/numo-core/nix?ref=lambda-build&rev=3dcc044265032b3efeae2e954579d9ea9756aa34";
     numo.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, numo }:
+  outputs = { self, nixpkgs, utils, numo }:
     let
       systems = [
         "x86_64-linux"
         "x86_64-darwin"
         "aarch64-darwin"
       ];
-      forAllSystems = f: nixpkgs.lib.genAttrs systems (system: f system);
     in
-    {
-      defaultPackage = numo.packages.aarch64-darwin.build-lambda { };
-    };
+    utils.lib.eachSystem systems (system: {
+      defaultPackage =
+        nixpkgs.legacyPackages.${system}.callPackage numo.packages.${system}.build-lambda { };
+    });
 }

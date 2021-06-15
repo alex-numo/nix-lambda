@@ -7,6 +7,13 @@ let
     python = pkgs.python38;
     overrides = pkgs.poetry2nix.overrides.withDefaults overrides;
   };
-  my-python-packages = python-packages: with python-packages; [ poetry-lambda ];
-in
-pkgs.python38.withPackages my-python-packages
+
+  my-python-packages = [ poetry-lambda ];
+  lambdaZip = pkgs.python38.buildEnv.override {
+    extraLibs = my-python-packages;
+    postBuild = ''
+      (cd $out/${pkgs.python38.sitePackages}; ${pkgs.zip}/bin/zip $out/lambda.zip *)
+      rm -rf $out/bin $out/lib $out/include $out/share
+    '';
+  };
+in lambdaZip

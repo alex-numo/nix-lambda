@@ -23,17 +23,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1623728382,
-        "narHash": "sha256-3Ssf4g7ml7Fu0PlKndFoTFKn3Z3h8VgIaqtUOA2/yyA=",
+        "lastModified": 1623729049,
+        "narHash": "sha256-E0ANgt4HGX9uufACr5lqA8by4T+txrrtTJJ6wPPFrIQ=",
         "ref": "lambda-build",
-        "rev": "31e50aab38dbf4f8fccbfe09713dec696ca7dd66",
-        "revCount": 8,
+        "rev": "9100f712896a9212f12561e0bd919c55b00b111a",
+        "revCount": 9,
         "type": "git",
         "url": "ssh://git@github.com/numo-core/nix"
       },
       "original": {
         "ref": "lambda-build",
-        "rev": "31e50aab38dbf4f8fccbfe09713dec696ca7dd66",
+        "rev": "9100f712896a9212f12561e0bd919c55b00b111a",
         "type": "git",
         "url": "ssh://git@github.com/numo-core/nix"
       }
