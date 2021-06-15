@@ -1,0 +1,50 @@
+{
+  "nodes": {
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1623704699,
+        "narHash": "sha256-72dHeRZ44cXsq3wgknOgXrfzR6bXIAtKC4nNsTCaSJI=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "8db24dec5368ef35657bbca14f0a3baaeefb0f88",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "release-21.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "numo": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1623728382,
+        "narHash": "sha256-3Ssf4g7ml7Fu0PlKndFoTFKn3Z3h8VgIaqtUOA2/yyA=",
+        "ref": "lambda-build",
+        "rev": "31e50aab38dbf4f8fccbfe09713dec696ca7dd66",
+        "revCount": 8,
+        "type": "git",
+        "url": "ssh://git@github.com/numo-core/nix"
+      },
+      "original": {
+        "ref": "lambda-build",
+        "rev": "31e50aab38dbf4f8fccbfe09713dec696ca7dd66",
+        "type": "git",
+        "url": "ssh://git@github.com/numo-core/nix"
+      }
+    },
+    "root": {
+      "inputs": {
+        "nixpkgs": "nixpkgs",
+        "numo": "numo"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
