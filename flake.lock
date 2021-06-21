@@ -69,7 +69,7 @@
         "utils": "utils"
       },
       "locked": {
-        "narHash": "sha256-T9s+4j0o8k96oml/Zd5L9fSgNjrLV6BRL4GfrGqoNNI=",
+        "narHash": "sha256-LEPaNLgUYrcw+ZP2iDPbIilVkCMDWfzLd206vc4tSOA=",
         "path": "/Users/alex/Repos/github.com/numo-core/nix",
         "type": "path"
       },
